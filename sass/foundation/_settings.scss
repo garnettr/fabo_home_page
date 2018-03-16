@@ -1,0 +1,204 @@
+// ================
+// Settings
+// ================
+
+
+// ================
+// Viewport Rules
+
+@-ms-viewport {
+	width: device-width;
+  zoom: 1;
+}
+
+@viewport {
+	width: device-width;
+  zoom: 1;
+}
+
+
+// ================
+// Fonts
+
+// @include fontFace("file name", "font family", normal/bold, normal/italic);
+
+
+
+@include fontFace('barlowcondensed-semibold', 'barlow', bold, normal);
+@include fontFace('barlowcondensed-regular', 'barlow', normal, normal);
+@include fontFace('barlowcondensed-italic', 'barlow', normal, italic);
+
+@include fontFace('robotoslab-regular', 'Roboto-Slab', normal, normal);
+@include fontFace('robotoslab-light', 'Roboto-Slab', 300, normal);
+@include fontFace('robotoslab-bold', 'Roboto-Slab', bold, normal);
+
+@include fontFace("icomoon", "icomoon", normal, normal);
+
+// ================
+// Variables
+
+// Font Stacks
+$f-headlineFont: 'Roboto-Slab', serif;
+$f-bodyFont: "barlow", Arial, sans-serif; 
+
+// Colors
+$c-fabo_brand_red: #cc0033;
+$c-fabo_teal: #7edafd;
+$c-fabo_wheat: #efeed1;
+$c-fabo_brand_dark_red: #790014;
+$c-fabo_brand_blue: #002a5d;
+$c-fabo_brand_grey: #a8a8a8;
+$c-fabo_brand_teal: #73d4f8;
+$c-fabo_brand_med_blue: #2e6c9a;
+$c-fabo_button_red: #bc112e;
+
+// Gradients
+
+
+// drop-shadow
+$drop-sadow: -1px 7px 20px 2px rgba(0,0,0,0.39);
+$drop-sadow_2: -1px 7px 39px 2px rgba(0, 0, 0, 0.5);
+$drop-sadow_3: 0px 6px 13px -4px rgba(0,0,0,0.39);
+
+// text shadow
+$text-shadow: 4px 2px 10px #1d1d1d;
+$text-shadow_2: 2px 2px 5px #1d1d1d;
+
+// Breakpoints
+$mq-xxLarge: 100em; // 1600px
+$mq-xLarge: 85.9375em; // 1375px
+$mq-large: 75em; // 1200px
+$mq-mediumLarge: 64em; // 1024px
+$mq-medium: 56.25em; // 900px
+$mq-mediumSmall: 48em; // 768px
+$mq-small: 37.5em; // 600px
+$mq-tiny: 30em; // 480px
+$mq-base: 20em; // 320px
+
+// Function to return a max value for a breakpoint (1px less)
+@function maxMQ($_mq-breakpoint) {
+  @return $_mq-breakpoint - 0.0625em;
+}
+
+// Common Dimensions
+// $d-typeSpacing: 1rem;
+
+// Icons
+// $i-download: "\e04d";
+$f-icon: "icomoon";
+$i-basketball: "\e900";
+$i-right-arrow: "\e902";
+$i-left-arrow: "\e903";
+
+
+// Group Styles
+.mob-hide {
+  display: none;
+  @media (min-width: $mq-mediumSmall) { 
+    display: inline-block;
+  }
+} 
+
+
+// Extendable Selecters
+
+%default_post {
+  width: 90%;
+  margin: auto;
+  border: 1px solid white;
+  border-radius: .75em;
+  // box-shadow: $drop-sadow_2;
+    @media (min-width: $mq-medium) { 
+      padding: 3em 2em 2em 2em;
+    }
+}
+
+ %fabo_gradient {
+    background-image: linear-gradient(-11deg, #000000 10%, #bc112e 103%);
+  }
+
+  %fabo_gradient_blue_trans {
+    background-image: linear-gradient(-11deg, $c-fabo_brand_blue 28%, rgba(188, 17, 46, 0) 75%);
+  }
+
+
+// box-shadow with 2 parts 
+
+%bendBoxShadowPt1 {
+  &:before,
+  &:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    box-shadow: 0 15px 10px #777;
+    transform: rotate(-3deg);
+  }
+}
+
+%bendBoxShadowPt2:after {
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+// Styled Classes
+
+@keyframes headerHeight {
+    0%   {opacity: 0;}
+    100% {opacity: 1}
+}
+
+
+// added to the header on scroll
+.fixed-nav-js {
+  padding: 1em !important;
+  position: fixed !important;
+  width: 100% !important;
+  z-index: 1000000000 !important;
+  animation: headerHeight 1s;
+}
+
+
+.headerLogo {
+  text-indent: -999rem;
+  position: relative;
+  padding: 0;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 79%;
+    top: 0;
+    height: 2.25em;
+    margin: auto;
+    background: url("../img/r-secondary_fabo_logo-b.svg") no-repeat center center;
+    background-size: contain;
+  }
+}
+
+
+// Video Wrapper
+
+.video-wrapper {
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    padding-top: 56%;
+  
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+

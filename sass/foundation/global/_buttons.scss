@@ -1,0 +1,112 @@
+// ================
+// Buttons
+// ================
+
+
+// ================
+// Extendable Placeholders
+
+// Base Button Styles
+%button {
+  display: block;
+  width: 100%;
+  padding: 0.75em 1.25em;
+  margin-top: .5em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 0;
+  border-radius: .5rem;
+  outline: 0;
+  background: $c-fabo_brand_blue;
+  @include fluidTypeSize( 1.125, 1);
+  box-shadow: $drop-sadow_3;
+  line-height: 1.2;
+  font-family: $f-headlineFont;
+  transition: all 0.5s ease;
+
+  &:hover,
+  &:focus {
+    // ~ Put hover/focus styles here ~
+  }
+
+  @media (min-width: $mq-small) {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+
+
+// Major Buttons
+%major-button  {
+  @extend button;
+  background: $c-fabo_button_red;
+  background-image: linear-gradient(180deg, #f12d4d 25%, #bc112e 100%);
+  padding: 1.25em;
+  border-radius: 3em;
+  font-weight: bold;
+
+  &:hover, 
+  &:focus {
+    background-color: #cc0033;;
+    background-image: linear-gradient(180deg, #cc0033 25%, #8a0024 100%);
+
+  }
+
+  @media (min-width: $mq-small) { 
+    padding: 1.25em 3em 1.25em 3em;
+  }
+}
+
+
+// Minor Buttons
+%minor-button  {
+    @extend button;
+    padding: 1.125em;
+    background: none;
+    border: 1px solid $c-fabo_brand_teal;
+    box-shadow: $drop-sadow;
+
+    &:hover,
+    &:focus {
+      font-weight: bold;
+      background-color: #68cbf0;
+      background-image: linear-gradient(180deg, #68cbf0 12%, #25b9f0 50%, #009cd6 100%);
+    }
+}
+
+
+// ================
+// Application of Placeholders
+
+// Default Button Selectors
+button,
+button a,
+input[type=button] {
+  @extend %button;
+}
+
+
+// Reusable Button Classes
+button,
+input, 
+button  {
+
+  &.button,
+  .button & {
+    @extend %button !optional;
+  }
+
+  &.major-button,
+  .major-button & {
+    @extend %major-button !optional;
+  }
+
+  &.minor-button,
+  .minor-button & {
+    @extend %minor-button !optional;
+  }
+}
+

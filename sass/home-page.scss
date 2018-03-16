@@ -1,0 +1,417 @@
+@import "foundation/index";
+
+body {
+  height: 100%;
+  position: relative;
+}
+
+/////////////////
+// Header Styles
+////////////////
+
+.header_wrapper {
+  padding: 1em;
+  .logo {
+    display: none;
+  }
+  ul {
+    margin: 0;
+
+    li a {
+      @include fluidTypeSize( 1.25, 1);
+    }
+
+    #nav-toggle {
+    }
+  }
+}
+
+
+/////////////////
+//	Page wrapper
+////////////////
+
+.page_wrapper {
+  @include page-wrapper($mq-mediumLarge);
+  position: relative;
+  max-width: 100%;
+  margin: initial;
+  padding: 0;
+  // white background behind page wrapper container
+
+  // basketball texture for behind the content
+  &:before, &:after {
+  	content: "";
+    position: absolute;
+    z-index: -1;
+    top: 110px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 61em;
+    height: 98%;
+    margin: auto;
+    background: white;
+    box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, .2);
+  }
+ 	/// basketball-court overlay
+  &:after { 
+  	background: url("../img/basketball-court.svg") no-repeat center center;
+  	background-size: 100%;
+  	background-position: 0 0;
+  	opacity: .4;
+  	box-shadow: none;
+  }
+
+  // Top Video Section
+  .top_video_section {
+    width: 96%;
+    max-width: 49em;
+    margin: auto;
+    text-align: center;
+
+    h4 {
+      padding-top: 2.5em;
+      font-family: $f-bodyFont;
+      color: $c-fabo_brand_red;
+      @include fluidTypeSize( 2, 1.5);
+    }
+
+    // video wrapper styels
+    .video-wrapper iframe {
+      overflow: hidden;
+      border: 3px solid white;
+      border-radius: 1em;
+      box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, .2);
+    }
+    // top video section media 	query
+    @media (min-width: $mq-medium) {
+      width: 76%;
+      margin: auto;
+    }
+  }
+
+  @media (min-width: $mq-small) {
+    &:before, &:after {
+      height: 94%;
+      background-size: cover;
+    }
+  }
+
+  @media (min-width: $mq-medium) {
+    &:before {
+      border-radius: 1em;
+    }
+  }
+}
+
+
+/////////////////
+//	Sub Header 
+////////////////
+
+.subheader {
+  .subheader_wrapper {
+    padding: 8em 0 5em;
+    transition: all 0.5s ease;
+    text-align: center;
+
+    h1 {
+      @include logo($fabo_logo_color);
+      @include fluidTypeSize( 5, 4);
+    }
+
+    h3 {
+      @include fluidTypeSize(2.75, 1.25);
+      position: relative;
+      padding-bottom: .25em;
+      color: white;
+      font-family: $f-headlineFont;
+    }
+
+    .sub-title {
+      @include fluidTypeSize(1.5, 1);
+      color: $c-fabo_wheat;
+    }
+
+    @media (min-width: $mq-medium) {
+      padding: 9em 0 9em;
+    }
+  }
+}
+
+
+/////////////////
+//	Post wrapper
+////////////////
+
+.post_wrapper {
+  @include page-wrapper(61em);
+  max-width: 58em;
+  max-height: 66em;
+
+  .standard_post {
+    @extend %default_post;
+    position: relative;
+    z-index: 1000;
+    margin-top: 2em;
+    padding: 15% 1em 1em;
+    padding-top: 1em;
+    border: none;
+    background: linear-gradient(rgba(255, 0, 0, 0) -17%, #003b80 100%), url("../img/basketball-court.svg") no-repeat center center;
+    background-size: cover;
+	 	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, .3); 
+
+    &:after {
+      @extend %fabo_gradient_blue_trans;
+      position: absolute;
+      z-index: -139;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      opacity: .6;
+      border-radius: .75em;
+    }
+
+    .standard-post-header {
+      h4 {
+        @include fluidTypeSize(1.65, 1.25);
+    		padding: 3em .5em 1em .5em;
+        text-align: center;
+        text-align: center;
+        color: white;
+        text-shadow: $text-shadow_2;
+        font-family: $f-bodyFont;
+      }
+    }
+
+    .standard-post-content {
+      color: white;
+    }
+
+    .button {
+      @extend %minor-button;
+      width: 100%;
+    }
+
+    @media (min-width: $mq-medium) {
+      width: 41.33333%;
+    }
+  } // end standard_post styles
+
+  ////////////////////
+  // Indi post images
+  /////////////////////
+
+  // Post 1 BKG
+  .standard_post:nth-of-type(1) {
+    background: url("../img/home_post_img4.png") no-repeat center center;
+    h4 {
+      text-align: left;
+    }
+    @media (min-width: $mq-medium) {
+      padding-top: 27%;
+    }
+  }
+  // Post 2 BKG
+  .standard_post:nth-of-type(2) {
+    text-align: center;
+    background: url("../img/home_post_img3.png") no-repeat center center;
+
+    @media (min-width: $mq-small) {
+      padding-top: 5%;
+    }
+  }
+  // Post 3 BKG
+  .standard_post:nth-of-type(3) {
+    overflow: hidden;
+    padding: 0;
+    background: url("../img/home_post_img1.png") no-repeat center center;
+  }
+  // Post 4 BKG
+  .standard_post:nth-of-type(4) {
+    background: url("../img/home_post_img2.png") no-repeat center center;
+
+    h4 {
+      text-align: left;
+    }
+
+    @media (min-width: $mq-small) {
+      padding-top: 63%;
+    }
+
+    @media (min-width: $mq-medium) {
+      padding-top: 31%;
+    }
+  }
+
+  // post wrapper media query
+  @media (min-width: $mq-small) {
+    @include flexbox;
+    @include flex-flow(column wrap);
+    max-height: 60em;
+    margin: auto;
+    background: url("../img/half_court_bkg.svg") no-repeat center center;
+
+    .post_section_header {
+      width: 100%;
+      text-align: center;
+    }
+
+    .standard_post {
+      width: 45.33333%;
+    }
+  }// end small query
+}
+
+/////////////////
+//	Carosel  
+////////////////
+
+
+.carousel_section {
+  width: 100%;
+  height: auto;
+  margin-top: 8em;
+  margin-bottom: 2%;
+
+  .carousel_wrapper {
+    padding: 3em 0;
+    background: url("../img/basketball_texure2.jpg") repeat center center;
+    box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, .2);
+
+    // left and right buttons
+    .slick-next,
+    .slick-arrow {
+      height: 0;
+    }
+
+    //Left and Right Arrow 
+
+    .slick-prev {
+    	left: -0.062rem;
+    	&:before {
+    		content: $i-left-arrow;
+    		font-family: $f-icon;
+    		background: rgba(128, 128, 128, .3);
+      	font-size: 40px;
+    	}
+    }
+    .slick-next {
+    	&:before {
+    		content: $i-right-arrow;
+    		font-family: $f-icon;
+    		background: rgba(128, 128, 128, .3);
+      	font-size: 40px;
+    	}
+    }
+
+    .carosel-item {
+    	position: relative;
+      width: calc(100vw - 24vw);
+      max-width: 25em;
+      height: 20em;
+      margin: 0 4em 1em;
+      text-align: center;
+      border-radius: .25em;
+      background: url("../img/home_post_img4.png") no-repeat center center;
+      background-size: cover;
+	    @extend %bendBoxShadowPt1;
+	    @extend %bendBoxShadowPt2;
+
+      @media (min-width: $mq-small) {
+        // padding-top: 30%;
+      }
+    }
+
+    @media (min-width: $mq-small) {
+      padding: 5em 0;
+    }
+  }
+}
+
+/////////////////
+//	Stay in touch 
+////////////////
+
+.stay_in-touch_section {
+  margin-top: 5em;
+  margin-bottom: 4em;
+
+  .s-i-t_wrapper {
+    @include page-wrapper(58em);
+
+    h5 {
+      margin: 0;
+      padding: 1em 1em 0;
+      color: wheat;
+    }
+
+    .s-i-t_content {
+      width: 90%;
+      margin: auto;
+
+      p {
+        color: white;
+      }
+
+      span {
+        input {
+          width: 100%;
+          padding: 1em;
+          border: none;
+          border-radius: .25em;
+        }
+
+        button {
+          margin-top: 1em;
+          border-radius: 3em;
+          background: $c-fabo_brand_red;
+        }
+
+        @media (min-width: $mq-tiny) {
+          display: flex;
+
+          input {
+            width: 80%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          button {
+            width: 30%;
+            margin-top: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $mq-mediumSmall) {
+      width: 90%;
+      margin: auto;
+
+      h5 {
+        padding-left: 0;
+      }
+
+      .s-i-t_content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          width: 50%;
+        }
+
+        span {
+          width: 42%;
+        }
+      }
+    }
+  }
+}

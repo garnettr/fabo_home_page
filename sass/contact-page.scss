@@ -1,0 +1,203 @@
+@import "foundation/index";
+
+
+.contact_section {
+	h4 {
+		color: white;
+		text-align: center;
+		font-family: $f-headlineFont;
+		@include fluidTypeSize( 3, 2);
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+}
+
+
+
+.main_contact_page {
+	position: relative;
+	height: 100%;
+	background-image: linear-gradient(rgba(255, 0, 0, 0) -17%, #032b5b 100%), url("../img/contact_background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	 &:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		margin: 0;
+		background-image:linear-gradient(rgba(255, 0, 0, 0) 55%, hsla(0, 100.0%, 50.0%, 1) 120%); 
+		background-attachment: fixed;
+		z-index: -2;
+	}
+
+}
+
+.page_wrapper {
+	@include flexbox;
+	.contact_section {
+		margin: 11vh auto;
+	}
+}
+
+
+/////////////////
+// Main Post
+////////////////
+
+.main_post {
+	@extend %default_post;
+	@include page-wrapper(61em);
+	padding: 0;
+	max-width: 46em;
+	border-radius: 0;
+	border-bottom-left-radius: .75em;
+	border-bottom-right-radius: .75em;
+	background: url("../img/basketball_texure.jpg") repeat center center;
+	background-size: 15%;
+
+	.main-post-header, .main-post-content {
+		display: inline-block;
+		width: 100%;
+		height: auto;
+		padding: 1em;
+
+		h3 {
+			margin: 0;
+			padding: 0;
+			font-weight: normal;
+			@include fluidTypeSize( 1.5, 1);
+		}
+	}
+
+	.main-post-header {
+		background: #dcdcdc;
+		text-align: center;
+	}
+
+	.form_wrapper {
+		@include flexbox;
+		@include flex-wrap(wrap);
+		padding: 3.5%;
+		@include justify-content(space-between);
+
+		.form-group {
+			width: 100%;
+
+				&:nth-of-type(1) { 
+					width: 49%;
+				}
+				&:nth-of-type(2) { 
+					width: 50%;
+				}
+		}
+				.button {
+					@extend %major-button;
+				}
+	}
+
+	@media (min-width: $mq-mediumSmall) { 
+	width: 100%;
+
+		.main_title {
+			display: none;
+		}
+		.main-post-header {
+			flex: 1 1 42%;
+		}
+		.main-post-content {
+			flex: 0 1 60%;
+			margin-right: 2em;
+			h3 {
+				color: $c-fabo_brand_red;
+			}
+		}
+	}
+}
+
+
+/////////////////
+//	Post wrapper
+////////////////
+
+.post_wrapper {
+	@include page-wrapper(61em);
+	padding: 4em 1em;
+
+	h4 {
+		color: white;
+		padding: .75em;
+		min-width: 100%;
+	}
+
+	@media (min-width: $mq-small) { 
+		display: flex;
+		flex-wrap: wrap;
+		margin: auto;
+		background: url("../img/half_court_bkg.svg") no-repeat center center;
+
+		.post_section_header {
+			text-align: center;
+		}
+
+		.standard_post {
+			width: 44%;
+			max-width: 18em;
+		}
+	}
+
+	.standard_post {
+		position: relative;
+		@extend %default_post;
+		border: none;
+		padding-top: 10em;
+		margin-top: 2em;
+		z-index: 1000;
+
+		background: linear-gradient(rgba(255, 0, 0, 0) -17%, #003b80 100%), url("../img/main_post_image.jpg") no-repeat center center; 
+		background-size: cover;
+
+		&:after{
+			position: absolute;
+			@extend %fabo_gradient;
+			content: "";
+	    width: 100%;
+	    height: 100%;
+	    top: 0;
+	    left: 0;
+	    z-index: -139;
+	    opacity: .6;
+	    border-radius: .75em;
+		}
+
+		.date {
+			color: #efefdb;
+		}
+
+		.standard-post-header, .standard-post-content {
+
+		}
+
+		.standard-post-header {
+			h4 {
+				padding: 0;
+				margin: 0;
+				text-shadow: $text-shadow_2;
+				color: $c-fabo_teal;
+			}
+		}
+
+		.standard-post-content {
+			color: white;
+		}
+
+		.button {
+			@extend %minor-button;
+			width: 100%;
+		}
+	}
+}
+

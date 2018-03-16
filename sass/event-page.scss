@@ -1,0 +1,258 @@
+@import "foundation/index";
+
+
+/////////////////
+//	Event Header 
+////////////////
+
+.event_header_section {
+	.event_header_wrapper {	
+	  padding: 3em 0;	
+		.event_page {
+			text-align: center;
+			@include logo($event_header);
+			@include fluidTypeSize( 6.5, 2.25);
+		}
+	}
+	@media (min-width: $mq-small) { 
+		background: none;
+		.event_header_wrapper {	
+			padding: 15vh 0 10vh;
+		}
+	}
+	@media (min-width: $mq-medium) { 
+		.event_header_wrapper {	
+			padding: 20vh 0 10vh;
+
+			h4 {
+				background: $event_header_large;
+				background-size: 100%;
+			}
+		}	
+	}
+}
+
+
+/////////////////
+// Main Post
+////////////////
+
+.main_post {
+	@extend %default_post;
+	@include page-wrapper(61em);
+	background: white;
+	padding: .5em;
+	max-width: 33em;
+
+	.main-post-header, .main-post-content {
+		display: inline-block;
+		width: 100%;
+		height: auto;
+		padding: 1em;
+	}
+	.main-post-header {
+		color: white;
+    background-image: linear-gradient(rgba(255, 0, 0, 0) -17%, #001329 100%), url("../img/main_post_image.jpg");
+    background-size: cover;
+    background-position: 0 27%;
+    border-radius: .5em;
+    padding-top: 6em;
+
+    h3 {
+    	text-shadow: $text-shadow;
+    }
+	}
+ .main-post-content {
+   	h3 {
+   		padding-bottom: 0;
+   	}
+	.major-button {
+	  @extend %major-button;
+	}
+  }
+ 
+	@media (min-width: $mq-mediumSmall) { 
+	display: flex;
+	flex-direction: row-reverse;
+	max-width: 61em;
+
+		.main_title {
+			display: none;
+		}
+		.main-post-header {
+			flex: 1 1 42%;
+		}
+		.main-post-content {
+			flex: 0 1 60%;
+			margin-right: 2em;
+			h3 {
+				color: $c-fabo_brand_red;
+			}
+		}
+	}
+
+	@media (min-width: $mq-medium) { 
+		.main-post-header, .main-post-content { 
+			padding: 2em;
+		}
+	}
+}
+
+
+/////////////////
+//	Post wrapper
+////////////////
+
+.post_wrapper {
+	@include page-wrapper(61em);
+	padding: 4em 1em;
+
+	h4 {
+		color: white;
+		padding: .75em;
+		min-width: 100%;
+	}
+
+	@media (min-width: $mq-small) { 
+		display: flex;
+		flex-wrap: wrap;
+		margin: auto;
+		background: url("../img/half_court_bkg.svg") no-repeat center center;
+
+		.post_section_header {
+			text-align: center;
+		}
+
+		.standard_post {
+			width: 44%;
+			max-width: 18em;
+		}
+	}
+
+	.standard_post {
+		position: relative;
+		@extend %default_post;
+		border: none;
+		padding-top: 10em;
+		margin-top: 2em;
+		z-index: 1000;
+
+		background: linear-gradient(rgba(255, 0, 0, 0) -17%, #003b80 100%), url("../img/main_post_image.jpg") no-repeat center center; 
+		background-size: cover;
+
+		&:after{
+			position: absolute;
+			@extend %fabo_gradient;
+			content: "";
+	    width: 100%;
+	    height: 100%;
+	    top: 0;
+	    left: 0;
+	    z-index: -139;
+	    opacity: .6;
+	    border-radius: .75em;
+		}
+
+		.date {
+			color: #efefdb;
+		}
+
+		.standard-post-header, .standard-post-content {
+
+		}
+
+		.standard-post-header {
+			h4 {
+				padding: 0;
+				margin: 0;
+				text-shadow: $text-shadow_2;
+				color: $c-fabo_teal;
+			}
+		}
+
+		.standard-post-content {
+			color: white;
+		}
+
+		.button {
+			@extend %minor-button;
+			width: 100%;
+		}
+	}
+}
+
+/////////////////
+//	Stay in touch 
+////////////////
+
+.stay_in-touch_section {
+	margin-bottom: 4em;
+	.s-i-t_wrapper {
+	@include page-wrapper(58em);
+
+	h5 {
+		margin: 0;
+		padding: 1em 1em 0;
+		color: wheat;
+	}
+		.s-i-t_content {
+			width: 90%;
+			margin: auto;
+			p {
+				color: white;
+			}
+			span {
+				input {
+					width: 100%;
+					border-radius: .25em;
+					border: none;
+					padding: 1em;
+				}
+				button {
+					margin-top: 1em;
+					background: $c-fabo_brand_red;
+					border-radius: 3em;
+				}
+				@media (min-width: $mq-tiny) { 
+					display: flex;
+					input {
+						width: 80%;
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+					button {
+						width: 30%;
+						margin-top: 0;
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+					}
+				}
+			}
+		}
+
+		@media (min-width: $mq-mediumSmall) { 
+			width: 90%;
+			margin: auto;
+
+
+			h5 {
+				padding-left: 0;
+			}
+
+				.s-i-t_content {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					p {
+						width: 50%;
+					}
+
+					span {
+						width: 42%;
+					}
+				}
+		}
+	}
+}

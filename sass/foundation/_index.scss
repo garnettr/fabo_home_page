@@ -1,0 +1,8 @@
+// Imports third-party code
+@import "compass", "vendor/flex", "vendor/royall", "vendor/html5-boilerplate-base", "vendor/normalize";
+
+// Imports configuration Sass (fonts, variables, mixins, extends, etc.)
+@import "settings";
+
+// Imports global styles
+@import "global/mixins", "global/type", "global/buttons", "global/mixins", "global/layout";

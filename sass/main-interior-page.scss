@@ -1,0 +1,514 @@
+@import "foundation/index";
+
+
+/////////////////
+//	Event Header 
+////////////////
+
+.event_header_section {
+	.event_header_wrapper {	
+		position: relative;
+	  padding: 12vh 0;
+	  background: linear-gradient(rgba(255, 0, 0, 0) -87%, #0b295a 100%), url('../img/internal_page_header_small.jpg') no-repeat center center;	
+	  background-size: cover;
+	  z-index: -3;
+		h4 {
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			color: white;
+			@include fluidTypeSize( 4, 2.25);
+			text-shadow: $text-shadow_2;
+			z-index: 10;
+		}
+	}
+	@media (min-width: $mq-small) { 
+		.event_header_wrapper {
+			background: linear-gradient(rgba(255, 0, 0, 0) -87%, #0b295a 100%), url('../img/internal_page_header_med.jpg') no-repeat center center;		
+			padding: 15vh 0 13vh;
+			background-size: cover;
+		}
+	}
+	@media (min-width: $mq-medium) { 
+		.event_header_wrapper {
+			background: linear-gradient(rgba(255, 0, 0, 0) -87%, #0b295a 100%), url('../img/internal_page_header.jpg') no-repeat center center;		
+			padding: 20vh 0 16vh;
+			background-size: cover;
+			background-position: 0 27%;
+		}	
+	}
+}
+
+/////////////////
+// Category
+////////////////
+
+.categories {
+	.category_wrapper {
+		position: relative;
+		background: white;
+
+		ul {
+			@include page-wrapper(63em);
+			list-style-type: none;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+
+				li {
+					text-transform: capitalize;
+					text-align: center;
+					flex-basis: 49%;
+					margin-bottom: 1em;
+
+					 &:nth-child(odd) {
+					 	margin-right: .125em;
+					 }
+
+					span {
+						font-weight: normal;
+						display: block;
+						color: white;
+						padding: .75em;
+						background: $c-fabo_brand_med_blue;
+						margin-top: .5em;
+					}
+				}
+			}
+		@media (min-width: $mq-small) { 
+			background: none;
+				&:after {
+					content: " ";
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background: white;
+					top: -63px;
+					z-index: -5;
+				}
+
+				ul {
+					flex-wrap: nowrap;
+					li {
+						padding-top: .5em;
+						margin-right: .125em;
+						span {
+							max-width: 96%;
+							margin: 0.75em auto;
+							padding: 2em 0;
+							border: 1px solid white;
+						}
+					}
+				}
+		}
+	}
+}
+
+
+/////////////////
+// Main Post
+////////////////
+
+.main_event_wrapper {
+	@include page-wrapper(61em);
+	.main_post {
+		@extend %default_post;
+		width: 100%;
+		background: white;
+		margin: 3em auto;
+		padding: .5em;
+		max-width: 33em;
+
+
+		.main-post-header, .main-post-content {
+			display: inline-block;
+			width: 100%;
+			height: auto;
+			padding: 1em;
+		}
+		.main-post-header {
+			color: white;
+	    background-image: linear-gradient(rgba(255, 0, 0, 0) -17%, #001329 100%), url("../img/main_post_image.jpg");
+	    background-size: cover;
+	    border-radius: .5em;
+	    padding-top: 6em;
+	    background-position: 0 27%;
+
+	    h3 {
+	    	text-shadow: $text-shadow;
+	    }
+		}
+	 .main-post-content {
+	   	h3 {
+	   		padding-bottom: 0;
+	   		color: $c-fabo_brand_teal; 
+	   	}
+			.major-button {
+		  	@extend %major-button;
+			}
+	  }
+	 
+		@media (min-width: $mq-mediumSmall) { 
+			display: flex;
+			flex-direction: row-reverse;
+			background: none;
+			border: none;
+			box-shadow: none;
+			max-width: 100%;
+			width: 100%;
+			padding: 0;
+
+			.main-post-header {
+				flex: 1 1 37%;
+				background-image: url("../img/main_post_image.jpg");
+				border: 1px solid white;
+				box-shadow: $drop-sadow;
+				.title {
+					display: none;
+				}
+			}
+			.main-post-content {
+				color: white;
+				flex: 0 1 65%;
+				margin-right: 2em;
+			}
+		}
+
+		@media (min-width: $mq-medium) { 
+			.main-post-header, .main-post-content { 
+				padding: 2em;
+			}
+		}
+	}
+}
+
+
+////////////////////////
+// Registration Details
+////////////////////////
+
+
+.registration_section {
+	background: white;
+	position: relative;
+
+	.registration_wrapper {
+		@include page-wrapper(61em);
+
+		h4 {
+			@include fluidTypeSize( 2.563, 1.75);
+			text-align: center;
+			margin: 0;
+			padding: 1em 0;
+		}
+
+		ul {
+			padding: 0;
+			margin: auto;
+			margin-bottom: 3em;
+			text-align: center;
+
+			li {
+				list-style-type: none;
+				padding-bottom: .5em;
+				@include fluidTypeSize( 1.25, 1);
+
+					&:before {
+						content: $i-basketball;
+						font-family: $f-icon;
+						position: relative;
+						left: -6px;
+						top: 2px;
+						width: 3em;
+						height: 3em;
+						color: $c-fabo_button_red;
+					}
+			}
+		}
+		.date_of_event, .location_of_event { 
+			background: $c-fabo_brand_med_blue;
+			box-shadow: -1px 7px 20px 2px rgba(0, 0, 0, 0.15); 
+			padding: 1em 2em;
+			border-radius: .5em;
+			text-align: left;
+			text-transform: capitalize;
+			margin: 1em 0;
+
+				h5 {
+					margin: 0 0 1em;
+					padding-bottom: .5em;
+					@include fluidTypeSize( 1.65, 1.25); 
+					color: $c-fabo_brand_teal;
+					border-bottom: 1px solid;
+				}
+
+				p {
+					color: white;
+					@include fluidTypeSize( 1.25, 1.125); 
+				}
+		} 
+	}
+	@media (min-width: $mq-small) { 
+		background: none;
+		.registration_wrapper { 
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+				h4 {
+					padding: 2em 0 2em;
+				}
+
+				h4, ul {
+					flex-basis: 100%;
+				}
+				.date_of_event, .location_of_event {
+					flex-basis: 49.44%;
+				}
+		}
+
+		&:before {
+			content: " ";
+			position: absolute;
+			width: 100%;
+			height: 80%;
+			top: 0;
+			background: white;
+			z-index: -2;
+		}
+		&:after {
+			content: " ";
+			position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    top: -80px;
+			background: url("../img/half_court_bkg_2.svg") no-repeat center center;
+			z-index: -1;
+			background-size: contain;
+			opacity: .5;
+		}
+	}
+}
+
+/////////////////////
+// more_info_section
+/////////////////////
+
+.more_info_section {
+	padding: 1em;
+
+	.info_header {
+		text-align: center;
+		color: $c-fabo_brand_dark_red;
+	}
+
+	.info_wrapper {
+		@include page-wrapper(54em);
+		padding: 1em;
+    background: white;
+    border-radius: 1em;
+    margin-top: 3em;
+
+    @media (min-width: 40.000em) { 
+    	padding: 1em 2em 2em;
+    }
+
+    span {
+    	display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: space-between;
+			background: #f0f0f0;
+			padding: .5em 1em;
+			border-radius: .25em;
+
+			p:nth-of-type(1) {
+				width: 100%;
+				font-weight: bold;
+				font-size: 1.125em;
+				text-align: left;
+			}
+			p:nth-of-type(2) { 
+				margin: 0;
+			}
+
+				@media (min-width: 40.000em) { 
+					flex-direction: row;
+					padding: .5em 2em;
+
+					p:nth-of-type(1) { 
+						width: initial;
+					}
+					p:nth-of-type(2) { 
+						margin: 1rem 0;
+					}
+				}
+    }
+	}
+}
+
+
+.main_i_post_section {
+	background: #15274b;
+}
+
+/////////////////
+//	Post wrapper
+////////////////
+
+.post_wrapper {
+	position: relative;
+	@include page-wrapper(61em);
+	margin-top: 5em;
+	padding: 1em 1em 3em;
+
+	h4 {
+		color: white;
+		padding: .75em;
+		min-width: 100%;
+	}
+
+	@media (min-width: $mq-small) { 
+		display: flex;
+		flex-wrap: wrap;
+
+		.post_section_header {
+			text-align: center;
+		}
+
+		.standard_post {
+			width: 44%;
+			max-width: 18em;
+		}
+	}
+
+
+
+	.standard_post {
+		position: relative;
+		@extend %default_post;
+		border: none;
+		padding-top: 10em;
+		margin-top: 2em;
+		z-index: 1000;
+
+		background: linear-gradient(rgba(255, 0, 0, 0) -17%, #003b80 100%), url("../img/main_post_image.jpg") no-repeat center center; 
+		background-size: cover;
+
+		&:after{
+			position: absolute;
+			@extend %fabo_gradient;
+			content: "";
+	    width: 100%;
+	    height: 100%;
+	    top: 0;
+	    left: 0;
+	    z-index: -139;
+	    opacity: .6;
+	    border-radius: .75em;
+		}
+
+		.date {
+			color: #efefdb;
+		}
+
+		.standard-post-header, .standard-post-content {
+
+		}
+
+		.standard-post-header {
+			h4 {
+				padding: 0;
+				margin: 0;
+				text-shadow: $text-shadow_2;
+				color: $c-fabo_teal;
+			}
+		}
+
+		.standard-post-content {
+			color: white;
+		}
+
+		button {
+			@extend %minor-button;
+			width: 100%;
+		}
+	}
+}
+
+/////////////////
+//	Stay in touch 
+////////////////
+
+.stay_in-touch_section {
+	margin-bottom: 4em;
+	.s-i-t_wrapper {
+	@include page-wrapper(58em);
+
+	h5 {
+		margin: 0;
+		padding: 1em 1em 0;
+		color: wheat;
+	}
+		.s-i-t_content {
+			width: 90%;
+			margin: auto;
+			p {
+				color: white;
+			}
+			span {
+				input {
+					width: 100%;
+					border-radius: .25em;
+					border: none;
+					padding: 1em;
+				}
+				button {
+					margin-top: 1em;
+					background: $c-fabo_brand_red;
+					border-radius: 3em;
+				}
+				@media (min-width: $mq-tiny) { 
+					display: flex;
+					input {
+						width: 80%;
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+					button {
+						width: 30%;
+						margin-top: 0;
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+					}
+				}
+			}
+		}
+
+		@media (min-width: $mq-mediumSmall) { 
+			width: 90%;
+			margin: auto;
+
+
+			h5 {
+				padding-left: 0;
+			}
+
+				.s-i-t_content {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					p {
+						width: 50%;
+					}
+
+					span {
+						width: 42%;
+					}
+				}
+		}
+	}
+}

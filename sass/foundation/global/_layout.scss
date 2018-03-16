@@ -1,0 +1,235 @@
+// ================
+// Layout
+// ================
+
+
+// ================
+// Universal Elements
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+
+	background-color: #002a5d;
+	background-image: linear-gradient(180deg, #002a5d 0%, #235d87 50%, #1b2656 100%);
+}
+
+// Event page styles
+body.event_page {
+	height: 100%;
+	position: relative;
+	background: url('../img/small_header_bk_images.jpg') no-repeat center center,  $c-fabo_brand_blue;
+	background-size: contain;
+	background-position: 0 50px;
+	z-index: 1;
+
+  &:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		margin: 0;
+		background-image:linear-gradient(rgba(255, 0, 0, 0) 55%, hsla(0, 100.0%, 50.0%, 1) 120%); 
+		background-attachment: fixed;
+		z-index: -2;
+	}
+
+	@media (min-width: $mq-small) {
+	background: #002a5d; 
+		&:before {
+			content: "";
+			position: absolute;
+	    top: 0;
+	    width: 100%;
+	    max-width: 78em;
+	    height: 100%;
+			background: url('../img/med_dunking_image.jpg') no-repeat center center, $c-fabo_brand_blue;
+	    background-size: 100%;
+	    background-position: 0 50px;
+	    z-index: -2;
+		}
+	}
+
+	@media (min-width: $mq-medium) {  
+		&:before {
+			background: url('../img/header_bk_image.jpg') no-repeat center center;
+			background-size: 100%;
+			background-position: 0 49px;
+			margin: auto;
+			left: 0;
+			right: 0;
+		}
+	}
+
+} // End Event page
+
+// Home page styles
+body.homepage {
+	background: url("../img/home_top_image.png") no-repeat center center, linear-gradient(180deg, #064188 0%, #002b5c 50%, #1b2656 100%);
+	background-attachment: fixed;
+	background-position: 56% 0;
+	@media (min-width: $mq-small) { 
+		background-size: cover;
+	}
+		// Red bottom gradient & basketball image 
+	  &:after, &:before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		margin: 0;
+		background-image:linear-gradient(rgba(255, 0, 0, 0) 14%, hsla(0, 100.0%, 50.0%, 1) 118%); 
+		z-index: -2;
+	}
+	// basketball image * hidden on mobile
+	&:before {
+		display: none;	
+		@media (min-width: $mq-mediumLarge) { 
+		display: block;
+		background: url("../img/basketball_bkg.png") no-repeat center center;
+		opacity: .2;
+		background-attachment: fixed;
+		background-position: 50px 5%;
+		background-size: cover;
+   	}
+	}
+}
+
+
+// ================
+// Navigation
+.dropdown-content {
+	@include flexbox;
+	display: none;
+	@include flex-direction(column);
+	text-align: center;
+	width: 100%;
+	.dropdown-item {
+		@include flexbox;
+		@include justify-content(center);
+		@include align-items(center);
+		height: 14.33vh;
+
+		&:nth-child(odd) {
+			background: #fafcfd;
+		}
+
+		&:hover, 
+		&:focus {
+			background: #f9f9f9;
+		}
+	}
+}
+
+
+// ================
+// Layout Modules
+
+%center,
+.center {
+	width: 90%;
+	max-width: $mq-medium;
+	margin: auto;
+}
+
+// ================
+// Major Layout Elements
+
+
+@include stickyFooter(".page_wrapper", $_x-ieFix: 'true');
+
+.header_wrapper {
+	position: relative;
+	background: white;
+	padding: 2em;
+	box-shadow: $drop-sadow;
+	z-index: 800;
+	header h1 {
+		text-indent: -999em;
+		margin: 0;	
+		@include background(20px,calc(5em - 2.5em),url('../img/r-secondary_fabo_logo.svg') no-repeat center center,contain);
+		@include fluidTypeSize( 1.25, 1.125);
+	}
+}
+
+#homeBtn {
+	padding: 0;
+	text-indent: -999rem;
+}
+
+.footer_wrapper {
+	border-top: 15px solid rgba(0, 12, 45, 0.2);
+	position: relative;
+
+	&:before {
+	content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 17px;
+    width: 100%;
+    height: 8em;
+    margin: auto;
+		background: url("../img/footer_fabo_logo.svg") no-repeat center center;
+		background-size: contain;
+	}
+
+	@media (min-width: $mq-small) { 
+		&:before { 
+			top: 47px;
+		}
+	}
+
+	footer {
+		@include page-wrapper(61em);
+		padding: 9em 1em 1em;
+
+		p {
+			padding: 0;
+			text-align: center;
+			color: white;
+			margin: 0;
+			font-size: 0.938em;
+		}
+		.footer_addy_name, .contact {
+		color: #000c2d;
+		font-family: $f-headlineFont;
+		text-decoration: uppercase;
+		@include fluidTypeSize( 1.6, 1.25);
+		margin-bottom: 0;
+		}
+
+		@media (min-width: $mq-small) { 
+			padding: 3em 1em 3em;
+			address {
+				display: flex;
+				justify-content: space-between;
+
+				.left_footer p {
+					text-align: left;
+				}
+				.right_footer p {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+
+.form-control{
+	border-radius: 0;
+	padding: .75rem;
+}
+
+.show {display:block;}
+
+

@@ -1,0 +1,51 @@
+// ================
+// Custom Mixins
+// ================
+
+
+// ~ Put your custom mixins here ~
+
+
+// logo has a drop-in
+
+$footer_logo: url('../img/footer_fabo_logo.svg') no-repeat center center; 
+$header-logo-dark: url('../img/r-secondary_fabo_logo.svg') no-repeat center center;
+$event_header: url('../img/small_event_title.png') no-repeat center center;
+$fabo_logo_color: url('../img/fabo_logo_color.svg') no-repeat center center;
+$event_header_large: url('../img/large_event_title.png') no-repeat center center;
+
+
+
+// page-wraper
+@mixin page-wrapper($max-section-width) {
+  padding: 1em;
+  max-width: $max-section-width;
+  margin: auto;
+  @media (min-width: $mq-mediumSmall) { 
+    // width: 90%;
+  }
+}
+
+
+@mixin logo($logo_placehodler) {
+    text-indent: -999rem;
+    width: 100%;
+    max-width: 5em;
+    margin: auto;
+    @include fluidTypeSize( 3, 2.25);
+    background: $logo_placehodler;
+    background-size: contain;
+}
+
+
+@mixin background($top, $height,$background_url,$background-size) {
+  position: absolute;
+  content: " ";
+  top: $top;
+  left: 0;
+  width: 100%;
+  height: $height;
+  background: $background_url;
+  background-size: $background-size;
+}
+
