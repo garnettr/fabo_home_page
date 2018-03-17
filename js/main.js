@@ -23,6 +23,7 @@ $('.carosel_container').slick({
 
 const eventNavtoggle = document.querySelector('#dropdown-toggle');
 const eventNavMenu = document.querySelector('.dropdown-menu');
+const eventNavItem = document.querySelectorAll('.dropdown-item');
 const headerWrapper = document.querySelector('.header_wrapper');
 const nav = document.querySelector('#navigation');
 const homepageBtn = document.querySelector('#homeBtn');
@@ -36,15 +37,6 @@ let headerHeight = headerWrapper.clientHeight;
 ///////////
 
 
-const navToggle = () => {
-	$(".dropdown-menu").css("display", "block");
-}
-
-const showHide = () => {
-	if(!event.target.matches('#dropdown-toggle')) {
-		$(".dropdown-menu").css("display", "none");
-	}
-}
 
 // sticky nav
 
@@ -58,6 +50,22 @@ const stickyNavigation = () => {
   }
 }
 
+// Navigation on click
+
+ // * part 1
+const navToggle = () => {
+  $(".dropdown-menu").css("display", "block");
+}
+ // * part 2
+const navItemsLoad = () => {
+  for (let i = 0; i < eventNavItem.length; i++) {
+    setTimeout(function () { 
+      // eventNavItem[i].classList.add('translateItemIn'); .slideUp()
+      eventNavItem[i].classList.add('translateItemIn');
+    }, 100 * (i + 1));
+  }
+}
+
 //---------------------
 
 ////////////////////
@@ -67,6 +75,19 @@ const stickyNavigation = () => {
 window.addEventListener('scroll', stickyNavigation);
 
 $(eventNavtoggle).click(function() {
-  $(eventNavMenu).toggleClass('show');
-})
+  $(eventNavMenu).toggleClass('showMenu');
+  
+  if ($('.dropdown-item').hasClass("translateItemIn")) {
+    $('.dropdown-item').removeClass("translateItemIn");
+  } else {
+    navItemsLoad();
+  }
+});
+
+
+
+
+
+
+
 

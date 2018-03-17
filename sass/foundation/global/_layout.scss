@@ -106,25 +106,51 @@ body.homepage {
 
 // ================
 // Navigation
+
+.nav-link {
+	color: $c-fabo_brand_blue;
+
+		&:hover, 
+		&:focus {
+			color: $c-fabo_brand_dark_red;
+		}
+}
+
 .dropdown-content {
 	@include flexbox;
 	display: none;
 	@include flex-direction(column);
 	text-align: center;
 	width: 100%;
+	background-color: #e8f2f5;
+	border-radius: 0;
+	margin: 0;
+	border: 1px solid #b0c5cb;
+	box-shadow: -1px 9px 6px -5px rgba(0, 43, 92, .2);
+
 	.dropdown-item {
 		@include flexbox;
 		@include justify-content(center);
 		@include align-items(center);
-		height: 14.33vh;
+		height: 7.33vh;
+		transform: translate(-999rem, 0px);
+		border: 1px solid lightblue;
+    border-radius: .25em;
+		margin: 0.25em;
+		padding: 1em 0;
+		width: initial;
 
 		&:nth-child(odd) {
-			background: #fafcfd;
+			background: #ddeef3;
 		}
 
 		&:hover, 
 		&:focus {
 			background: #f9f9f9;
+		}
+
+		@media (min-width: $mq-medium) { 
+			width: 100%;
 		}
 	}
 }
@@ -230,6 +256,11 @@ body.homepage {
 	padding: .75rem;
 }
 
-.show {display:block;}
+.showMenu {
+	@include flexbox;
+	@media (min-width: $mq-medium) { 
+		@include flex-direction(row);
+	}
+}
 
 

@@ -99,7 +99,6 @@ $i-left-arrow: "\e903";
   }
 } 
 
-
 // Extendable Selecters
 
 %default_post {
@@ -113,13 +112,13 @@ $i-left-arrow: "\e903";
     }
 }
 
- %fabo_gradient {
-    background-image: linear-gradient(-11deg, #000000 10%, #bc112e 103%);
-  }
+%fabo_gradient {
+  background-image: linear-gradient(-11deg, #000000 10%, #bc112e 103%);
+}
 
-  %fabo_gradient_blue_trans {
-    background-image: linear-gradient(-11deg, $c-fabo_brand_blue 28%, rgba(188, 17, 46, 0) 75%);
-  }
+%fabo_gradient_blue_trans {
+  background-image: linear-gradient(-11deg, $c-fabo_brand_blue 28%, rgba(188, 17, 46, 0) 75%);
+}
 
 
 // box-shadow with 2 parts 
@@ -162,6 +161,12 @@ $i-left-arrow: "\e903";
   width: 100% !important;
   z-index: 1000000000 !important;
   animation: headerHeight 1s;
+}
+
+// animating links in 
+.translateItemIn {
+  transition: all 0.25s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+  transform: translate(0rem, 0px) !important;
 }
 
 
