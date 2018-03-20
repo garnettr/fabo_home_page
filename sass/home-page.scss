@@ -30,7 +30,7 @@ body {
         color: #d2d2d2;
         top: 0;
         left: 0;
-        right: 0;
+        right: 100%;
         bottom: 0;
         margin: auto;
         width: 28%;
@@ -52,7 +52,7 @@ body {
       width: 100%;
       margin: 0;
       &:before { 
-        color: #f70742;
+        display: none;
       }
     }
 
@@ -298,6 +298,7 @@ body {
 
     .standard_post {
       width: 45.33333%;
+      margin: 1em;
     }
   }// end small query
 }
@@ -321,7 +322,8 @@ body {
     // left and right buttons
     .slick-next,
     .slick-arrow {
-      height: 0;
+      height: 40px;
+      width: 50px;
     }
 
     //Left and Right Arrow 

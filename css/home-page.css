@@ -1541,7 +1541,7 @@ body {
   color: #d2d2d2;
   top: 0;
   left: 0;
-  right: 0;
+  right: 100%;
   bottom: 0;
   margin: auto;
   width: 28%;
@@ -1560,7 +1560,7 @@ body {
 }
 /* line 54, ../sass/home-page.scss */
 .header_wrapper ul .dropdown-item:before {
-  color: #f70742;
+  display: none;
 }
 
 /* line 70, ../sass/home-page.scss */
@@ -1878,46 +1878,48 @@ body {
   /* line 299, ../sass/home-page.scss */
   .post_wrapper .standard_post {
     width: 45.33333%;
+    margin: 1em;
   }
 }
 
-/* line 310, ../sass/home-page.scss */
+/* line 311, ../sass/home-page.scss */
 .carousel_section {
   width: 100%;
   height: auto;
   margin-top: 8em;
   margin-bottom: 2%;
 }
-/* line 316, ../sass/home-page.scss */
+/* line 317, ../sass/home-page.scss */
 .carousel_section .carousel_wrapper {
   padding: 3em 0;
   background: url("../img/basketball_texure2.jpg") repeat center center;
   box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.2);
 }
-/* line 322, ../sass/home-page.scss */
+/* line 323, ../sass/home-page.scss */
 .carousel_section .carousel_wrapper .slick-next,
 .carousel_section .carousel_wrapper .slick-arrow {
-  height: 0;
+  height: 40px;
+  width: 50px;
 }
-/* line 329, ../sass/home-page.scss */
+/* line 331, ../sass/home-page.scss */
 .carousel_section .carousel_wrapper .slick-prev {
   left: -0.062rem;
 }
-/* line 331, ../sass/home-page.scss */
+/* line 333, ../sass/home-page.scss */
 .carousel_section .carousel_wrapper .slick-prev:before {
   content: "";
   font-family: "icomoon";
   background: rgba(128, 128, 128, 0.3);
   font-size: 40px;
 }
-/* line 339, ../sass/home-page.scss */
+/* line 341, ../sass/home-page.scss */
 .carousel_section .carousel_wrapper .slick-next:before {
   content: "";
   font-family: "icomoon";
   background: rgba(128, 128, 128, 0.3);
   font-size: 40px;
 }
-/* line 347, ../sass/home-page.scss */
+/* line 349, ../sass/home-page.scss */
 .carousel_section .carousel_wrapper .carosel-item {
   position: relative;
   width: calc(100vw - 24vw);
@@ -1930,46 +1932,46 @@ body {
   background-size: cover;
 }
 @media (min-width: 37.5em) {
-  /* line 316, ../sass/home-page.scss */
+  /* line 317, ../sass/home-page.scss */
   .carousel_section .carousel_wrapper {
     padding: 5em 0;
   }
 }
 
-/* line 375, ../sass/home-page.scss */
+/* line 377, ../sass/home-page.scss */
 .stay_in-touch_section {
   margin-top: 5em;
   margin-bottom: 4em;
 }
-/* line 379, ../sass/home-page.scss */
+/* line 381, ../sass/home-page.scss */
 .stay_in-touch_section .s-i-t_wrapper {
   padding: 1em;
   max-width: 58em;
   margin: auto;
 }
-/* line 382, ../sass/home-page.scss */
+/* line 384, ../sass/home-page.scss */
 .stay_in-touch_section .s-i-t_wrapper h5 {
   margin: 0;
   padding: 1em 1em 0;
   color: wheat;
 }
-/* line 388, ../sass/home-page.scss */
+/* line 390, ../sass/home-page.scss */
 .stay_in-touch_section .s-i-t_wrapper .s-i-t_content {
   width: 90%;
   margin: auto;
 }
-/* line 392, ../sass/home-page.scss */
+/* line 394, ../sass/home-page.scss */
 .stay_in-touch_section .s-i-t_wrapper .s-i-t_content p {
   color: white;
 }
-/* line 397, ../sass/home-page.scss */
+/* line 399, ../sass/home-page.scss */
 .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input {
   width: 100%;
   padding: 1em;
   border: none;
   border-radius: .25em;
 }
-/* line 404, ../sass/home-page.scss */
+/* line 406, ../sass/home-page.scss */
 .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span button,
 .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input.major-button, .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span .major-button input, .major-button .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input,
 .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input.minor-button, .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span .minor-button input, .minor-button .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input, .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span .post_wrapper .standard_post .button, .post_wrapper .standard_post .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span .button {
@@ -1978,17 +1980,17 @@ body {
   background: #cc0033;
 }
 @media (min-width: 30em) {
-  /* line 396, ../sass/home-page.scss */
+  /* line 398, ../sass/home-page.scss */
   .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span {
     display: flex;
   }
-  /* line 413, ../sass/home-page.scss */
+  /* line 415, ../sass/home-page.scss */
   .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input {
     width: 80%;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  /* line 419, ../sass/home-page.scss */
+  /* line 421, ../sass/home-page.scss */
   .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span button,
   .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input.major-button, .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span .major-button input, .major-button .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input,
   .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input.minor-button, .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span .minor-button input, .minor-button .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span input, .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span .post_wrapper .standard_post .button, .post_wrapper .standard_post .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span .button {
@@ -1999,27 +2001,27 @@ body {
   }
 }
 @media (min-width: 48em) {
-  /* line 379, ../sass/home-page.scss */
+  /* line 381, ../sass/home-page.scss */
   .stay_in-touch_section .s-i-t_wrapper {
     width: 90%;
     margin: auto;
   }
-  /* line 433, ../sass/home-page.scss */
+  /* line 435, ../sass/home-page.scss */
   .stay_in-touch_section .s-i-t_wrapper h5 {
     padding-left: 0;
   }
-  /* line 437, ../sass/home-page.scss */
+  /* line 439, ../sass/home-page.scss */
   .stay_in-touch_section .s-i-t_wrapper .s-i-t_content {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
   }
-  /* line 443, ../sass/home-page.scss */
+  /* line 445, ../sass/home-page.scss */
   .stay_in-touch_section .s-i-t_wrapper .s-i-t_content p {
     width: 50%;
   }
-  /* line 447, ../sass/home-page.scss */
+  /* line 449, ../sass/home-page.scss */
   .stay_in-touch_section .s-i-t_wrapper .s-i-t_content span {
     width: 42%;
   }
