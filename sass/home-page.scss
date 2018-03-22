@@ -364,6 +364,32 @@ body {
       }
     }
 
+
+    .item-1 {
+      background: url("../img/slide1.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    .item-2 {
+      background: url("../img/slide2.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    .item-3 {
+      background: url("../img/slide3.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    .item-4 {
+      background: url("../img/slide4.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    .item-5 {
+      background: url("../img/slide5.jpg") no-repeat center center;
+      background-size: cover;
+    }
+    .item-6 {
+      background: url("../img/slide6.jpg") no-repeat center center;
+      background-size: cover;
+    }
+
     @media (min-width: $mq-small) {
       padding: 5em 0;
     }
